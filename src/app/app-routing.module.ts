@@ -13,10 +13,10 @@ const routes: Routes = [
     path: 'rejestracja',
     component: RegisterComponent,
   },
-  {
-    path: '**',
-    redirectTo: 'logowanie',
-  },
+  // {
+  //   path: '**',
+  //   redirectTo: 'logowanie',
+  // },
 ];
 
 @NgModule({
