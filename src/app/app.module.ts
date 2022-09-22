@@ -8,9 +8,11 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent, NavbarComponent],
+  declarations: [AppComponent, LoginComponent, RegisterComponent, NavbarComponent, PageNotFoundComponent, HomeComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
