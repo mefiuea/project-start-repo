@@ -1,1 +1,47 @@
-<p>register works!</p>
+<!-- root -->
+<div>
+    <div class="min-h-0 flex flex-col mb-10">
+        <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
+            <div class="bg-white px-6 py-8 border-red-500 border rounded-xl text-black w-full">
+                <h1 class="mb-8 text-3xl text-center">Zarejestruj</h1>
+                <form action="" method="get" @submit.prevent>
+                    <input type="text"
+                        class="block border border-lime-700 w-full p-3 rounded-xl mb-2 mt-2 hover:bg-gray-100"
+                        name="email" placeholder="Email (wymagane)" />
+
+                    <input type="password"
+                        class="block border border-lime-700 w-full p-3 rounded-xl mb-2 mt-2 hover:bg-gray-100"
+                        name="password1" placeholder="Podaj hasło (wymagane)" />
+
+                    <input type="password"
+                        class="block border border-lime-700 w-full p-3 rounded-xl mb-2 mt-2 hover:bg-gray-100"
+                        name="password2" placeholder="Powtórz hasło (wymagane)" />
+
+                    <input type="text"
+                        class="block border border-lime-700 w-full p-3 rounded-xl mb-2 mt-2 hover:bg-gray-100"
+                        name="user_name" placeholder="Nazwa użytkownika" />
+
+                    <input type="text"
+                        class="block border border-lime-700 w-full p-3 rounded-xl mb-2 mt-2 hover:bg-gray-100"
+                        name="first_name" placeholder="Imię" />
+
+                    <input type="text"
+                        class="block border border-lime-700 w-full p-3 rounded-xl mb-2 mt-2 hover:bg-gray-100"
+                        name="last_name" placeholder="Nazwisko" />
+
+                    <button type="submit" name="create_account_button" value="clicked"
+                        class="w-full text-center hover:bg-green-dark hover:text-white focus:outline-none my-1 duration-300 py-2 px-4 rounded-full text-black font-bold border-2 border-red-500 hover:bg-red-500">
+                        Stwórz konto
+                    </button>
+                </form>
+
+                <div class="text-center text-sm text-grey-dark mt-4">
+                    Masz już konto?
+                    <a routerLink="/logowanie" class="border-b border-green-500 text-green-500">
+                        Zaloguj się</a>.
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- root end -->
+</div>
