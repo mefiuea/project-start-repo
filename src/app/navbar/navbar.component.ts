@@ -6,9 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
+  title: string = 'Navbar';
 
   constructor() { }
 
   ngOnInit(): void {
+
+  }
+
+  toggleMobileMenu: boolean = true;
+  showMobileMenu() {
+    this.toggleMobileMenu =! this.toggleMobileMenu
+    console.log('Button status: ', this.toggleMobileMenu)
   }
 }
