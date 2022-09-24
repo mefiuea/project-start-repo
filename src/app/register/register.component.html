@@ -4,33 +4,34 @@
         <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
             <div class="bg-white px-6 py-8 border-red-500 border rounded-xl text-black w-full">
                 <h1 class="mb-8 text-3xl text-center">Zarejestruj</h1>
-                <form action="" method="get" @submit.prevent>
-                    <input type="text"
+                <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+                    <input type="text" name="email" ngModel required email="true" maxlength="50" #email="ngModel"
                         class="block border border-lime-700 w-full p-3 rounded-xl mb-2 mt-2 hover:bg-gray-100"
-                        name="email" placeholder="Email (wymagane)" />
+                        placeholder="Email (wymagane)" />
 
-                    <input type="password"
+                    <input type="password" name="password1" ngModel required maxlength="30" #password1="ngModel"
                         class="block border border-lime-700 w-full p-3 rounded-xl mb-2 mt-2 hover:bg-gray-100"
-                        name="password1" placeholder="Podaj hasło (wymagane)" />
+                        placeholder="Podaj hasło (wymagane)" />
 
-                    <input type="password"
+                    <input type="password" name="password2" ngModel required maxlength="30" #password2="ngModel"
                         class="block border border-lime-700 w-full p-3 rounded-xl mb-2 mt-2 hover:bg-gray-100"
-                        name="password2" placeholder="Powtórz hasło (wymagane)" />
+                        placeholder="Powtórz hasło (wymagane)" />
 
-                    <input type="text"
+                    <input type="text" name="user_name" ngModel maxlength="30" #user_name="ngModel"
                         class="block border border-lime-700 w-full p-3 rounded-xl mb-2 mt-2 hover:bg-gray-100"
-                        name="user_name" placeholder="Nazwa użytkownika" />
+                        placeholder="Nazwa użytkownika" />
 
-                    <input type="text"
+                    <input type="text" name="first_name" ngModel maxlength="30" #first_name="ngModel"
                         class="block border border-lime-700 w-full p-3 rounded-xl mb-2 mt-2 hover:bg-gray-100"
-                        name="first_name" placeholder="Imię" />
+                        placeholder="Imię" />
 
-                    <input type="text"
+                    <input type="text" name="last_name" ngModel maxlength="30" #last_name="ngModel"
                         class="block border border-lime-700 w-full p-3 rounded-xl mb-2 mt-2 hover:bg-gray-100"
-                        name="last_name" placeholder="Nazwisko" />
+                        placeholder="Nazwisko" />
 
                     <button type="submit" name="create_account_button" value="clicked"
-                        class="w-full text-center hover:bg-green-dark hover:text-white focus:outline-none my-1 duration-300 py-2 px-4 rounded-full text-black font-bold border-2 border-red-500 hover:bg-red-500">
+                        class="w-full text-center hover:bg-green-dark hover:text-white focus:outline-none my-1 duration-300 py-2 px-4 rounded-full text-black font-bold border-2 border-red-500 hover:bg-red-500"
+                        [ngClass]="{ 'opacity-25': f.invalid }" [disabled]="f.invalid">
                         Stwórz konto
                     </button>
                 </form>
