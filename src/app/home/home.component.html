@@ -8,7 +8,9 @@
             <div class="my-auto">
                 <p class="">STRONA DOMOWA</p>
             </div>
-
+        </div>
+        <div *ngIf="getFromSession()" class="flex justify-center text-center">
+            <p>Zalogowano: {{ getFromSession() }}</p>
         </div>
     </div>
     <!-- end root -->
