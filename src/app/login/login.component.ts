@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,12 +8,15 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  constructor() { }
+
+  constructor(private _router: Router) { }
 
   ngOnInit(): void { }
 
   onSubmit(f: NgForm) {
-    console.log('Form value: ', f.value);  // { first: '', last: '' }
-    console.log('Form valid: ', f.valid);  // false
+    console.log('Form value: ', f.value);
+    console.log('Form valid: ', f.valid);
+
+    this._router.navigate(['/'])
   }
 }
