@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
     return sessionStorage.getItem('email');
   }
 
-  userIsAuthenticated(): boolean {
+  public userIsAuthenticated(): boolean {
     if (sessionStorage.getItem('email') != null && sessionStorage.getItem('isAuthenticated') != null) {
       let emailLenght = Number(sessionStorage.getItem('email')?.length)
       if (emailLenght > 0 && sessionStorage.getItem('isAuthenticated') === 'true') {
