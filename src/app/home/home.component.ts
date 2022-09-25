@@ -7,10 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  getFromSession(): string | null {
+  getUserFromSession(): string | null {
     return sessionStorage.getItem('email');
   }
-  
+
+  userIsAuthenticated(): boolean {
+    if (sessionStorage.getItem('email') != null && sessionStorage.getItem('isAuthenticated') != null) {
+      let emailLenght = Number(sessionStorage.getItem('email')?.length)
+      if (emailLenght > 0 && sessionStorage.getItem('isAuthenticated') === 'true') {
+        return true  // user is authenticated
+      } else {
+        return false
+      }
+    } else {
+      return false
+    }
+  }
+
   constructor() { }
 
   ngOnInit(): void {

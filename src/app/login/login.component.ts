@@ -17,7 +17,8 @@ export class LoginComponent implements OnInit {
     console.log('Form value: ', f.value);
     console.log('Form valid: ', f.valid);
 
-    sessionStorage.setItem('email', JSON.stringify(f.value.email))
+    sessionStorage.setItem('email', f.value.email)
+    sessionStorage.setItem('isAuthenticated', JSON.stringify(true))
 
     this._router.navigate(['/']);
   }

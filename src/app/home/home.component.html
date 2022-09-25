@@ -9,8 +9,9 @@
                 <p class="">STRONA DOMOWA</p>
             </div>
         </div>
-        <div *ngIf="getFromSession()" class="flex justify-center text-center">
-            <p>Zalogowano: {{ getFromSession() }}</p>
+        <div *ngIf="userIsAuthenticated()" class="flex justify-center text-center">
+            <!-- <p>isAuthenticated: {{ userIsAuthenticated() }}</p> -->
+            <p>Zalogowano: {{ getUserFromSession() }}</p>
         </div>
     </div>
     <!-- end root -->
