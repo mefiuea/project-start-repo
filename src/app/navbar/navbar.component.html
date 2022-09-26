@@ -22,25 +22,27 @@
                     </div>
                     <!-- login / register -->
                     <div *ngIf="!isAutheniticated; else userIsAuthenticated"
-                        class="flex items-center my-1 mr-1 fold:px-2 fold:my-2 fold:space-x-2 fold:mr-2"
-                        [ngClass]="{'hidden' : !toggleMobileMenu}">
-                        <a routerLink="/logowanie"
+                        class="hidden xs:flex items-center px-2 my-2 space-x-2 mr-2">
+                        <a *ngIf="toggleMobileMenu" routerLink="/logowanie"
                             class="duration-300 py-2 px-4 rounded-full text-white font-bold border-2 border-green-500 hover:bg-green-500">
                             Logowanie</a>
-                        <a routerLink="/rejestracja"
+                        <a *ngIf="toggleMobileMenu" routerLink="/rejestracja"
                             class="duration-300 py-2 px-4 rounded-full text-white font-bold border-2 border-red-500 hover:bg-red-500">
                             Rejestracja</a>
                     </div>
                     <ng-template #userIsAuthenticated>
-                        <div class="invisible fold:visible flex items-center my-1 mr-1 fold:px-2 fold:my-2 fold:space-x-2 fold:mr-2"
-                            [ngClass]="{'hidden' : !toggleMobileMenu}">
-                            <a routerLink="/profil"
-                                class="duration-300 py-2 px-4 rounded-full text-white font-bold border-2 border-green-500 hover:bg-green-500">
+                        <div
+                            class="flex items-center px-2 my-2 space-x-2 mr-2">
+                            <a *ngIf="toggleMobileMenu" routerLink="/profil"
+                                class="hidden xs:flex duration-300 py-2 px-4 rounded-full text-white font-bold border-2 border-green-500 hover:bg-green-500">
                                 {{ userName }}</a>
+                            <a *ngIf="toggleMobileMenu" routerLink="/wyloguj"
+                                class="hidden ss:flex duration-300 py-2 px-4 rounded-full text-white font-bold border-2 border-red-500 hover:bg-red-500">
+                                Wyloguj</a>
                         </div>
                     </ng-template>
                     <!-- button show mobile menu -->
-                    <div class="flex md:hidden items-center fold:mr-2" [ngClass]="{'my-2.5' : !toggleMobileMenu}">
+                    <div class="flex md:hidden items-center my-3.5 mr-2">
                         <button class="py-0" (click)="showMobileMenu()">
                             <img src="../../assets/images/menu_icon.png" class="max-h-10" alt="Menu icon" />
                         </button>
@@ -64,19 +66,22 @@
                     </div>
                 </a>
                 <div *ngIf="!isAutheniticated else userIsAuthenticatedMobile"
-                    class="py-6 space-x-2 border-t border-red-600">
+                    class="py-6 space-y-2 border-t border-red-600 text-center">
                     <a routerLink="/logowanie"
-                        class="duration-300 py-3 px-4 mx-2 rounded-full text-white font-bold border-2 border-green-500 hover:bg-green-500">
+                        class="block duration-300 py-3 px-4 mx-2 max-w-xs rounded-full text-white font-bold border-2 border-green-500 hover:bg-green-500">
                         Logowanie</a>
                     <a routerLink="/rejestracja"
-                        class="duration-300 py-3 px-4 rounded-full text-white font-bold border-2 border-red-500 hover:bg-red-500">
+                        class="block duration-300 py-3 px-4 mx-2 max-w-xs rounded-full text-white font-bold border-2 border-red-500 hover:bg-red-500">
                         Rejestracja</a>
                 </div>
                 <ng-template #userIsAuthenticatedMobile>
-                    <div class="flex items-center my-1 mr-1 fold:px-2 fold:my-2 fold:space-x-2 fold:mr-2">
+                    <div class="py-6 space-y-2 border-t border-red-600 text-center">
                         <a routerLink="/profil"
-                            class="duration-300 py-2 px-4 rounded-full text-white font-bold border-2 border-green-500 hover:bg-green-500">
+                            class="block duration-300 py-3 px-4 mx-2 max-w-xs rounded-full text-white font-bold border-2 border-green-500 hover:bg-green-500">
                             {{ userName }}</a>
+                        <a routerLink="/wyloguj"
+                            class="block duration-300 py-3 px-4 mx-2 max-w-xs rounded-full text-white font-bold border-2 border-red-500 hover:bg-red-500">
+                            Wyloguj</a>
                     </div>
                 </ng-template>
             </div>
