@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  onSubmit(f: NgForm) {
+  onSubmit(f: NgForm): void {
     console.log('Form value: ', f.value);
     console.log('Form valid: ', f.valid);
 
@@ -24,4 +24,5 @@ export class LoginComponent implements OnInit {
       window.location.reload();
     });
   }
+  
 }

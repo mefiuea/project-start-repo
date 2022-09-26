@@ -9,6 +9,7 @@ import { HomeComponent } from '../home/home.component';
 })
 export class NavbarComponent implements OnInit {
   title: string = 'Navbar';
+  toggleMobileMenu: boolean = true;
   isAutheniticated: boolean = false;
   userName: string | null;
 
@@ -21,10 +22,9 @@ export class NavbarComponent implements OnInit {
     console.log('User name: ', this.userName);
   }
 
-  toggleMobileMenu: boolean = true;
-  showMobileMenu() {
+  showMobileMenu(): void {
     this.toggleMobileMenu = !this.toggleMobileMenu
     console.log('Button status: ', this.toggleMobileMenu)
   }
-
+  
 }

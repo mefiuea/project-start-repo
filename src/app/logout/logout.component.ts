@@ -20,6 +20,6 @@ export class LogoutComponent implements OnInit {
     this._router.navigate(['/']).then(() => {
       window.location.reload();
     });
-
   }
+  
 }

@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
   getUserFromSession(): string | null {
     return sessionStorage.getItem('email');
   }
@@ -24,8 +29,4 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 }
