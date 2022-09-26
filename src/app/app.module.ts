@@ -10,9 +10,10 @@ import { RegisterComponent } from './register/register.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HomeComponent } from './home/home.component';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent, NavbarComponent, PageNotFoundComponent, HomeComponent],
+  declarations: [AppComponent, LoginComponent, RegisterComponent, NavbarComponent, PageNotFoundComponent, HomeComponent, LogoutComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

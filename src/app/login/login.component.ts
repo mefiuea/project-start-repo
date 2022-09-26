@@ -20,6 +20,8 @@ export class LoginComponent implements OnInit {
     sessionStorage.setItem('email', f.value.email)
     sessionStorage.setItem('isAuthenticated', JSON.stringify(true))
 
-    this._router.navigate(['/']);
+    this._router.navigate(['/']).then(() => {
+      window.location.reload();
+    });
   }
 }
